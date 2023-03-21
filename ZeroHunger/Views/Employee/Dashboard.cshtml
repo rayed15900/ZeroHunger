@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_EmployeeLayout.cshtml";
+}
+
+<h2>@ViewBag.Employee.Name</h2>
+
+<div class="container">
+    @foreach (var obj in Model)
+    {
+        foreach (var item in obj.CollectRequests)
+        {
+            if (item.Employee_id == ViewBag.Employee.Id)
+            {
+                <h3>@obj.Name</h3>
+                <hr />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Status</th>
+                        <th>Expire At</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    @foreach (var i in obj.CollectRequests)
+                    {
+                        if (i.Employee_id == ViewBag.Employee.Id)
+                        {
+                            <tr>
+                                <td>@i.Name</td>
+                                <td>@i.Quantity</td>
+                                <td>@i.Status</td>
+                                <td>@i.ExpireAt</td>
+                                <td><a href="/Employee/Collect/@i.Id" class="btn btn-success">Collected</a></td>
+                                <td><a href="/Employee/Distribute/@i.Id" class="btn btn-success">Distributed</a></td>
+                            </tr>
+                        }
+                    }
+                </table>
+                <br />
+            }
+        }
+    }
+</div>

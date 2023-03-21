@@ -1,0 +1,22 @@
+﻿
+<h2>Login</h2>
+
+<br />
+
+<div class="container">
+    <form method="post">
+        Username:
+        <input type="text" name="Username" class="form-control" />
+        <br />
+        Password:
+        <input type="password" name="Password" class="form-control" />
+
+        <br /><br />
+        <button class="btn btn-primary">Login</button>
+    </form>
+</div>
+
+@if(ViewBag.Login != null)
+{
+    <h3 class="text-danger">@ViewBag.Login</h3>
+}

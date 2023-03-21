@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<h2>@ViewBag.Restaurant Dashboard</h2>
+
+<br />
+
+<div class="container">
+    <form method="post">
+        Food Item:
+        <input type="text" name="Name" class="form-control" />
+        <br />
+        Quantity:
+        <input type="text" name="Quantity" class="form-control" />
+        <br />
+        Expire Time:
+        <input type="datetime" name="ExpireAt" class="form-control" />
+
+        <br /><br />
+        <button class="btn btn-primary">Create Collect Request</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Assign Employee</h2>
+
+<div class="container">
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Phone</td>
+                <td><a href="/Admin/AssignEmployee/@item.Id" class="btn btn-success">Assign</a></td>
+            </tr>
+        }
+    </table>
+</div>

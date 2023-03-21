@@ -1,0 +1,36 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Dashboard</h2>
+
+<div class="container">
+    @foreach (var obj in Model)
+    {
+        <h3>@obj.Name</h3>
+        <hr />
+        <table class="table table-bordered">
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Created At</th>
+                <th>Expire At</th>
+                <th></th>
+            </tr>
+            @foreach (var item in obj.CollectRequests)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Status</td>
+                    <td>@item.CreateAt</td>
+                    <td>@item.ExpireAt</td>
+                    <td><a href="/Admin/EmployeeList/@item.Id" class="btn btn-success">Assign Employee</a></td>
+                </tr>
+            }
+        </table>
+        <br />
+    }
+</div>

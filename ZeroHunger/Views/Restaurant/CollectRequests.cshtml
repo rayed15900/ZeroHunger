@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_RestaurantLayout.cshtml";
+}
+
+<h2>Collect Requests</h2>
+
+<div class="container">
+    @foreach (var obj in Model)
+    {
+        if (obj.Id == ViewBag.Id)
+        {
+            <h3>@obj.Name</h3>
+            <hr />
+            <table class="table table-bordered">
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Created At</th>
+                    <th>Expire At</th>
+                </tr>
+                @foreach (var item in obj.CollectRequests)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Quantity</td>
+                        <td>@item.Status</td>
+                        <td>@item.CreateAt</td>
+                        <td>@item.ExpireAt</td>
+                    </tr>
+                }
+            </table>
+            <br />
+        }
+    }
+</div>
